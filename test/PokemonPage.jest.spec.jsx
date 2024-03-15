@@ -1,5 +1,4 @@
 /* eslint-env jest*/
-/* eslint no-redeclare: 'off' */
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import axiosMock from 'axios'
@@ -10,17 +9,6 @@ import PokemonPage from '../src/PokemonPage'
 import { MemoryRouter } from 'react-router-dom'
 
 jest.mock('axios')
-
-var previous = {
-  url: 'https://pokeapi.co/api/v2/pokemon/132/',
-  name: 'ditto',
-  id: 132
-}
-var next = {
-  url: 'https://pokeapi.co/api/v2/pokemon/134/',
-  name: 'vaporeon',
-  id: 134
-}
 
 const pokemonList = {
   id: 133,
@@ -73,13 +61,13 @@ const pokemonList = {
   sprites: { front_default: 'URL' }
 }
 
-var previous = {
+const previous = {
   url: 'https://pokeapi.co/api/v2/pokemon/132/',
   name: 'ditto',
   id: 132
 }
 
-var next = {
+const next = {
   url: 'https://pokeapi.co/api/v2/pokemon/134/',
   name: 'vaporeon',
   id: 134
