@@ -1,3 +1,4 @@
 jobs:
-  run: |
-    echo "Hello World!"
+  hello_world_job:
+    steps:
+      run: echo "Hello World!"
