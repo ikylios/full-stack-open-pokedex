@@ -42,6 +42,10 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{toJson(join(github.event.commits.*.message)) }}
         run: echo "$COMMIT_MESSAGES"
+      - name: check for string
+        env:
+          RESULT: ${{toJson(contains(join(github.event.commits.*.message), '#skip')) }}
+        run: echo "$RESULT"
       - name: Trigger deployment
         if: ${{ github.event_name == 'push' }}
         run: curl ${{ secrets.RENDER_DEPLOY_KEY }}
