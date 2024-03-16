@@ -30,13 +30,9 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:5000
-      - name: github context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
       - name: commits
         env:
-          COMMITS: ${{ toJson(github.event.commits) }}
+          COMMITS: ${{ toJson(github.event) }}
         run: echo "$COMMITS"
       - name: commit messages
         env:
