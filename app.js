@@ -13,6 +13,5 @@ app.listen(PORT, () => {
 })
 
 app.get('/health', (req, res) => {
-  res.status(400).end()
-  // res.status(200).send('ok')
+  res.status(200).send('ok')
 })
